@@ -16,6 +16,11 @@ body {
     
 }
 .wrapper {
+    display: block;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    width: 80vw;
 }
 .counter {
     font-weight: bold;
@@ -24,7 +29,20 @@ body {
     align-items: center;
 }
 
-
+#play-again{
+    font-weight: bold;
+    text-align: center;
+    background-color: #eef0f2;
+    border: solid 2px #908b86;
+    display: block;
+    width: 100px;
+    padding:10px 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px black;
+    font-size: 1.2em;
+    margin: 20px auto 0;
+    
+}
 
 .counter div:is(#Match,#Miss){
     font-weight: bold;
@@ -47,9 +65,9 @@ div:is(#Match,#Miss) .number{
 }
 
 .item img{
-    width: 100px;
+    width: 13vh;
+    height: 13vh;
     background-color: white;
-    height: 100px;
     box-shadow: 1px 1px 1px #2f2d2e;
     border: solid white 2px;
     border-radius: 5px;
@@ -59,24 +77,26 @@ div:is(#Match,#Miss) .number{
     margin:5px 0 0  5px;
 }
 
-.flipped{
+.flipped img {
     animation: flip 0.5s forwards linear;
-}
+  }
+  
 
 @keyframes flip{
     100%{
         transform: rotateY(180deg);
     }
-
+    
 }
 
 .game{
     display: grid;
     margin: 20px auto 0;
-    width: 450px;
     grid-template-columns: repeat(4,1fr);
     justify-content: center;
     align-items: center;
+    height: 60vh;
+    width: 60vw;
 }
 @keyframes pulse {
     0% {
@@ -90,8 +110,40 @@ div:is(#Match,#Miss) .number{
       box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
     }
   }
+  @keyframes pulse-green {
+    0% {
+      border-radius: 10px;
+      box-shadow: 0 0 0 0 rgba(0, 255, 0, 0.7);
+    }
+    70% {
+      box-shadow: 0 0 0 15px rgba(0, 255, 0, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(0, 255, 0, 0);
+    }
+  }
+  
+  @keyframes pulse-red {
+    0% {
+      border-radius: 10px;
+      box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7);
+    }
+    70% {
+      box-shadow: 0 0 0 15px rgba(255, 0, 0, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
+    }
+  }
+  
   
   .pulse-animation {
     animation: pulse 1s;
+  }
+  .pulse-animation-red {
+    animation: pulse-red 1s;
+  }
+  .pulse-animation-green {
+    animation: pulse-green 1s;
   }
  
