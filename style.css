@@ -9,6 +9,7 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
+    
     /* background-color: #ffeddf; */
     background-image: radial-gradient(circle at center,#ffeddf,rgb(135, 135, 135));
     box-sizing: border-box;
@@ -65,8 +66,8 @@ div:is(#Match,#Miss) .number{
 }
 
 .item img{
-    width: 13vh;
-    height: 13vh;
+    width: 10vh;
+    height: 10vh;
     background-color: white;
     box-shadow: 1px 1px 1px #2f2d2e;
     border: solid white 2px;
