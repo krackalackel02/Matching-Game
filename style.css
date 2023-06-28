@@ -1,13 +1,80 @@
 body {
     margin: 0;
+    font-family: 'Indie Flower', cursive;
+    
     color: #2f2d2e;
 }
-.wrapper {
+.outer-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 100vh;
-    border: solid 10px #908b86;
-	background-color: #ffeddf;
+    /* background-color: #ffeddf; */
+    background-image: radial-gradient(circle at center,#ffeddf,rgb(135, 135, 135));
     box-sizing: border-box;
+    padding: 20px;
+    
 }
-.counter{
+.wrapper {
+}
+.counter {
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.counter div:is(#Match,#Miss){
+    font-weight: bold;
+    display: flex;
     background-color: #eef0f2;
+    border: solid 2px #908b86;
+    justify-content: center;
+    padding:20px 0;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px black;
+    font-size: 1.2em;
+    margin: 0 10px;
+}
+div:is(#Match,#Miss) *{
+    padding:0 10px;
+}
+div:is(#Match,#Miss) .number{
+    font-size: 2em;
+    margin:-13px 0
+}
+
+.item img{
+    width: 100px;
+    background-color: white;
+    height: 100px;
+    box-shadow: 1px 1px 1px #2f2d2e;
+    border: solid white 2px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin:5px 0 0  5px;
+}
+
+.flipped{
+    animation: flip 0.5s forwards linear;
+}
+
+@keyframes flip{
+    100%{
+        transform: rotateY(180deg);
+    }
+
+}
+
+.game{
+    display: grid;
+    margin: 20px auto 0;
+    width: 450px;
+    grid-template-columns: repeat(4,1fr);
+    justify-content: center;
+    align-items: center;
 }
