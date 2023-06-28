@@ -16,6 +16,11 @@ body {
     
 }
 .wrapper {
+    display: block;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    width: 80vw;
 }
 .counter {
     font-weight: bold;
@@ -47,9 +52,9 @@ div:is(#Match,#Miss) .number{
 }
 
 .item img{
-    width: 100px;
+    width: 13vh;
+    height: 13vh;
     background-color: white;
-    height: 100px;
     box-shadow: 1px 1px 1px #2f2d2e;
     border: solid white 2px;
     border-radius: 5px;
@@ -59,24 +64,26 @@ div:is(#Match,#Miss) .number{
     margin:5px 0 0  5px;
 }
 
-.flipped{
+.flipped img {
     animation: flip 0.5s forwards linear;
-}
+  }
+  
 
 @keyframes flip{
     100%{
         transform: rotateY(180deg);
     }
-
+    
 }
 
 .game{
     display: grid;
     margin: 20px auto 0;
-    width: 450px;
     grid-template-columns: repeat(4,1fr);
     justify-content: center;
     align-items: center;
+    height: 60vh;
+    width: 60vw;
 }
 @keyframes pulse {
     0% {
