@@ -29,7 +29,20 @@ body {
     align-items: center;
 }
 
-
+#play-again{
+    font-weight: bold;
+    text-align: center;
+    background-color: #eef0f2;
+    border: solid 2px #908b86;
+    display: block;
+    width: 100px;
+    padding:10px 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px black;
+    font-size: 1.2em;
+    margin: 20px auto 0;
+    
+}
 
 .counter div:is(#Match,#Miss){
     font-weight: bold;
@@ -97,8 +110,40 @@ div:is(#Match,#Miss) .number{
       box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
     }
   }
+  @keyframes pulse-green {
+    0% {
+      border-radius: 10px;
+      box-shadow: 0 0 0 0 rgba(0, 255, 0, 0.7);
+    }
+    70% {
+      box-shadow: 0 0 0 15px rgba(0, 255, 0, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(0, 255, 0, 0);
+    }
+  }
+  
+  @keyframes pulse-red {
+    0% {
+      border-radius: 10px;
+      box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7);
+    }
+    70% {
+      box-shadow: 0 0 0 15px rgba(255, 0, 0, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
+    }
+  }
+  
   
   .pulse-animation {
     animation: pulse 1s;
+  }
+  .pulse-animation-red {
+    animation: pulse-red 1s;
+  }
+  .pulse-animation-green {
+    animation: pulse-green 1s;
   }
  
