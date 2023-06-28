@@ -1,0 +1,13 @@
+body {
+    margin: 0;
+    color: #2f2d2e;
+}
+.wrapper {
+    height: 100vh;
+    border: solid 10px #908b86;
+	background-color: #ffeddf;
+    box-sizing: border-box;
+}
+.counter{
+    background-color: #eef0f2;
+}
