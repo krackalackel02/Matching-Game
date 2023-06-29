@@ -53,9 +53,10 @@ images.forEach((image) => {
 
 						// Keep the matched cards face up and add green border and pulse animation
 						img1.style.border = "2px solid green";
-						img1.classList.add("pulse-animation-green");
 						img2.style.border = "2px solid green";
+						img1.classList.add("pulse-animation-green");
 						img2.classList.add("pulse-animation-green");
+						
 
 						// Clear flippedCards array
 						flippedCards = [];
@@ -66,7 +67,9 @@ images.forEach((image) => {
 						// Check if all matches have been found
 						if (matchedCount === totalMatches) {
 							// Game over
-							alert("Congratulations! You've found all matches!");
+							alert(
+								`Congratulations! You've found ${totalMatches} matches  with only ${missCount} misses!`
+							);
 						}
 					} else {
 						// No match found
@@ -98,7 +101,7 @@ images.forEach((image) => {
 
 					// Update matches remaining count
 					matchRemaining.textContent = matchesRemaining;
-                    // Update miss count
+					// Update miss count
 					totalMisses.textContent = missCount;
 
 					// Enable click events after a short delay
@@ -119,10 +122,9 @@ playAgain.addEventListener("click", () => {
 });
 
 function shuffleCards() {
-    const game = document.querySelector(".game");
-    for (let i = game.children.length; i >= 0; i--) {
-        game.appendChild(game.children[Math.random() * i | 0]);
-    }
+	const game = document.querySelector(".game");
+	for (let i = game.children.length; i >= 0; i--) {
+		game.appendChild(game.children[(Math.random() * i) | 0]);
+	}
 }
 window.addEventListener("DOMContentLoaded", shuffleCards);
-

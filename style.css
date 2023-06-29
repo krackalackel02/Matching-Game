@@ -132,14 +132,14 @@ div:is(#Match, #Miss) .number {
     }
 }
 
-.pulse-animation img {
+.pulse-animation img{
     animation: pulse 1s;
 }
 
-.pulse-animation-red img {
+.pulse-animation-red img{
     animation: pulse-red 1s;
 }
 
-.pulse-animation-green img {
+.pulse-animation-green{
     animation: pulse-green 1s;
 }
