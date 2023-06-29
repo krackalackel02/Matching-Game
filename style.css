@@ -64,6 +64,13 @@ div:is(#Match, #Miss) .number {
 	margin: -13px 0;
 }
 
+.item{
+	display: flex;
+	justify-content: center; /* Center horizontally */
+	align-items: center; /* Center vertically */
+	
+}
+
 .item img {
 	width: 9.5vh;
 	height: 9.5vh;
@@ -71,11 +78,9 @@ div:is(#Match, #Miss) .number {
 	box-shadow: 1px 1px 1px #2f2d2e;
 	border: solid white 2px;
 	border-radius: 5px;
-	display: flex;
-	justify-content: space-evenly;
-	align-items: center;
 	margin: 5px 0 0 5px;
-}
+  }
+  
 
 .flipped img {
 	animation: flip 0.5s forwards linear;
