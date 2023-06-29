@@ -117,3 +117,12 @@ let playAgain = document.getElementById("play-again");
 playAgain.addEventListener("click", () => {
 	location.reload();
 });
+
+function shuffleCards() {
+    const game = document.querySelector(".game");
+    for (let i = game.children.length; i >= 0; i--) {
+        game.appendChild(game.children[Math.random() * i | 0]);
+    }
+}
+window.addEventListener("DOMContentLoaded", shuffleCards);
+

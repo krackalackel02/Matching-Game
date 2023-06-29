@@ -97,49 +97,49 @@ div:is(#Match, #Miss) .number {
 	width: 60vw;
 }
 @keyframes pulse {
-	0% {
-		border-radius: 10px;
-		box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
-	}
-	70% {
-		box-shadow: 0 0 0 15px rgba(255, 255, 255, 0);
-	}
-	100% {
-		box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
-	}
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(255, 255, 255, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    }
 }
+
 @keyframes pulse-green {
-	0% {
-		border-radius: 10px;
-		box-shadow: 0 0 0 0 rgba(0, 255, 0, 0.7);
-	}
-	70% {
-		box-shadow: 0 0 0 15px rgba(0, 255, 0, 0);
-	}
-	100% {
-		box-shadow: 0 0 0 0 rgba(0, 255, 0, 0);
-	}
+    0% {
+        box-shadow: 0 0 0 0 rgba(0, 255, 0, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(0, 255, 0, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 255, 0, 0);
+    }
 }
 
 @keyframes pulse-red {
-	0% {
-		border-radius: 10px;
-		box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7);
-	}
-	70% {
-		box-shadow: 0 0 0 15px rgba(255, 0, 0, 0);
-	}
-	100% {
-		box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
-	}
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(255, 0, 0, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
+    }
 }
 
-.pulse-animation {
-	animation: pulse 1s;
+.pulse-animation img {
+    animation: pulse 1s;
 }
-.pulse-animation-red {
-	animation: pulse-red 1s;
+
+.pulse-animation-red img {
+    animation: pulse-red 1s;
 }
-.pulse-animation-green {
-	animation: pulse-green 1s;
+
+.pulse-animation-green img {
+    animation: pulse-green 1s;
 }
