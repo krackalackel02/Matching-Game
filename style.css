@@ -82,8 +82,8 @@ div:is(#Match, #Miss) .number {
   }
   
 
-.flipped img {
-	animation: flip 0.5s forwards linear;
+.flipped  {
+	animation: flip 0.5s forwards linear alternate;
 }
 
 @keyframes flip {
