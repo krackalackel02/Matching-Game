@@ -14,6 +14,9 @@ images.forEach((image) => {
   image.addEventListener("click", (e) => {
     const card = e.target.parentElement;
 
+    // Disable click events temporarily to prevent selecting more cards
+    card.style.pointerEvents = "none";
+
     if (!card.classList.contains("flipped")) {
       // Allow flipping only if the card is not already flipped
       card.classList.add("flipped");
@@ -37,11 +40,10 @@ images.forEach((image) => {
         flippedCards.push(card);
 
         if (flippedCards.length === 2) {
-          // Disable click events temporarily to prevent selecting more cards
-          images.forEach((image) => {
-            image.parentElement.style.pointerEvents = "none";
-          });
-
+			// Enable click events after flipping back the unmatched cards
+			images.forEach((image) => {
+				image.parentElement.style.pointerEvents = "none";
+			  });
           // Check if the flipped cards match
           const [card1, card2] = flippedCards;
           const img1 = card1.querySelector("img");
@@ -99,6 +101,11 @@ images.forEach((image) => {
 
                   // Clear flippedCards array
                   flippedCards = [];
+
+                  // Enable click events after flipping back the unmatched cards
+                  images.forEach((image) => {
+                    image.parentElement.style.pointerEvents = "auto";
+                  });
                 }, 250);
               }, 500);
             }, 500);
@@ -108,13 +115,6 @@ images.forEach((image) => {
           matchRemaining.textContent = matchesRemaining;
           // Update miss count
           totalMisses.textContent = missCount;
-
-          // Enable click events after a short delay
-          setTimeout(() => {
-            images.forEach((image) => {
-              image.parentElement.style.pointerEvents = "auto";
-            });
-          }, 1500);
         }
       }, 250);
     }
