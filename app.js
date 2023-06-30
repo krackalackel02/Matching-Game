@@ -73,9 +73,9 @@ images.forEach((image) => {
             // Check if all matches have been found
             if (matchedCount === totalMatches) {
               // Game over
-              alert(
+              setTimeout(alert(
                 `Congratulations! You've found ${totalMatches} matches with only ${missCount} misses!`
-              );
+              ),600)
             }
           } else {
             // No match found
