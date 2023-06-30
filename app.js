@@ -14,6 +14,11 @@ images.forEach((image) => {
   image.addEventListener("click", (e) => {
     const card = e.target.parentElement;
 
+    // Check if the clicked card is already matched or flipped
+    if (card.classList.contains("matched") || card.classList.contains("flipped")) {
+      return; // Ignore the click event
+    }
+
     // Disable click events temporarily to prevent selecting more cards
     card.style.pointerEvents = "none";
 
@@ -40,10 +45,6 @@ images.forEach((image) => {
         flippedCards.push(card);
 
         if (flippedCards.length === 2) {
-			// Enable click events after flipping back the unmatched cards
-			images.forEach((image) => {
-				image.parentElement.style.pointerEvents = "none";
-			  });
           // Check if the flipped cards match
           const [card1, card2] = flippedCards;
           const img1 = card1.querySelector("img");
@@ -58,6 +59,10 @@ images.forEach((image) => {
             img2.style.border = "2px solid green";
             img1.classList.add("pulse-animation-green");
             img2.classList.add("pulse-animation-green");
+
+            // Add "matched" class to both cards
+            card1.classList.add("matched");
+            card2.classList.add("matched");
 
             // Clear flippedCards array
             flippedCards = [];
@@ -102,9 +107,12 @@ images.forEach((image) => {
                   // Clear flippedCards array
                   flippedCards = [];
 
-                  // Enable click events after flipping back the unmatched cards
+                  // Enable click events on the unmatched cards
                   images.forEach((image) => {
-                    image.parentElement.style.pointerEvents = "auto";
+                    const card = image.parentElement;
+                    if (!card.classList.contains("matched")) {
+                      card.style.pointerEvents = "auto";
+                    }
                   });
                 }, 250);
               }, 500);
