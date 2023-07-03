@@ -82,17 +82,71 @@ div:is(#Match, #Miss) .number {
   }
   
 
-.flipped  {
+  
+  .flip-animation {
 	animation: flip 0.5s forwards linear alternate;
-}
-
-@keyframes flip {
-	100% {
-		transform: rotateY(180deg);
+	transform-style: preserve-3d;
+	transform-origin: center;
+  }
+  
+  @keyframes flip {
+	0% {
+	  transform: rotateY(0deg);
 	}
-}
+	50% {
+	  transform: rotateY(90deg);
+	}
+	100% {
+	  transform: rotateY(180deg);
+	}
+  }
+  
+  @keyframes pulse {
+	0% {
+	  box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+	}
+	70% {
+	  box-shadow: 0 0 0 20px rgba(255, 255, 255, 0);
+	}
+	100% {
+	  box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+	}
+  }
+  
+  @keyframes pulse-green {
+	0% {
+	  box-shadow: 0 0 0 0 rgba(0, 255, 0, 0.7);
+	}
+	70% {
+	  box-shadow: 0 0 0 15px rgba(0, 255, 0, 0);
+	}
+	100% {
+	  box-shadow: 0 0 0 0 rgba(0, 255, 0, 0);
+	}
+  }
+  
+  @keyframes pulse-red {
+	0% {
+	  box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7);
+	}
+	70% {
+	  box-shadow: 0 0 0 15px rgba(255, 0, 0, 0);
+	}
+	100% {
+	  box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
+	}
+  }
+  
 
-.game {
+  .pulse-animation-red img {
+	animation: pulse-red 1s;
+  }
+  
+  .pulse-animation-green img {
+	animation: pulse-green 1s;
+  }
+  
+  .game {
 	display: grid;
 	margin: 20px auto 0;
 	grid-template-columns: repeat(4, 1fr);
@@ -100,51 +154,5 @@ div:is(#Match, #Miss) .number {
 	align-items: center;
 	height: 60vh;
 	width: 60vw;
-}
-@keyframes pulse {
-    0% {
-        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
-    }
-    70% {
-        box-shadow: 0 0 0 15px rgba(255, 255, 255, 0);
-    }
-    100% {
-        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
-    }
-}
-
-@keyframes pulse-green {
-    0% {
-        box-shadow: 0 0 0 0 rgba(0, 255, 0, 0.7);
-    }
-    70% {
-        box-shadow: 0 0 0 15px rgba(0, 255, 0, 0);
-    }
-    100% {
-        box-shadow: 0 0 0 0 rgba(0, 255, 0, 0);
-    }
-}
-
-@keyframes pulse-red {
-    0% {
-        box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7);
-    }
-    70% {
-        box-shadow: 0 0 0 15px rgba(255, 0, 0, 0);
-    }
-    100% {
-        box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
-    }
-}
-
-.pulse-animation img{
-    animation: pulse 1s;
-}
-
-.pulse-animation-red img{
-    animation: pulse-red 1s;
-}
-
-.pulse-animation-green{
-    animation: pulse-green 1s;
-}
+  }
+  
