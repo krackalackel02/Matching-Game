@@ -159,9 +159,6 @@ div:is(#Match, #Miss) .number {
   /* FOOTER */
 
 .footer {
-	position: absolute;
-	bottom: 0;
-	left: 0;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -181,8 +178,8 @@ div:is(#Match, #Miss) .number {
 .fa-github:hover {
 	transform: rotate(360deg) scale(1.2);
 }
-
-@media screen and (max-height: 850px) {
+/* 
+@media screen and (max-height: 915px) and (min-width: 915px) {
 	.footer {
 		position: absolute;
 		bottom: 0;
@@ -196,4 +193,4 @@ div:is(#Match, #Miss) .number {
 		font-size: 20px;
 		text-align: center;
 	}
-}
+} */
